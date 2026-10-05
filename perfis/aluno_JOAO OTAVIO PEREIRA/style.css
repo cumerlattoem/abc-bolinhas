@@ -1,0 +1,318 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #f5f7fb, #e9eef7);
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+header {
+    background: linear-gradient(135deg, #111827, #1e293b);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+}
+
+/* ==============================
+   MENU
+============================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #374151;
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   CONTEÚDO
+============================== */
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 55px auto;
+}
+
+/* ==============================
+   CARTÃO PRINCIPAL
+============================== */
+
+.contato {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 45px;
+    border-radius: 22px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.contato h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.descricao {
+    text-align: center;
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   REDES SOCIAIS
+============================== */
+
+.redes-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rede {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #1f2937;
+    background: #f8fafc;
+    padding: 18px 20px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.rede::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #64748b;
+    transition: 0.3s;
+}
+
+.rede:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.10);
+}
+
+/* ==============================
+   ÍCONES
+============================== */
+
+.icone {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-right: 18px;
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* WhatsApp */
+
+.whatsapp .icone {
+    background: #25d366;
+}
+
+.whatsapp::before {
+    background: #25d366;
+}
+
+/* GitHub */
+
+.github .icone {
+    background: #181717;
+}
+
+.github::before {
+    background: #181717;
+}
+
+/* Instagram */
+
+.instagram .icone {
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+}
+
+.instagram::before {
+    background: #e1306c;
+}
+
+/* LinkedIn */
+
+.linkedin .icone {
+    background: #0a66c2;
+}
+
+.linkedin::before {
+    background: #0a66c2;
+}
+
+/* ==============================
+   INFORMAÇÕES
+============================== */
+
+.informacao {
+    flex: 1;
+}
+
+.informacao h3 {
+    font-size: 19px;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.informacao p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+/* ==============================
+   SETA
+============================== */
+
+.seta {
+    font-size: 27px;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+}
+
+.rede:hover .seta {
+    transform: translateX(7px);
+    color: #111827;
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+footer {
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 60px;
+    background: #111827;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 220px;
+    }
+
+    main {
+        width: 94%;
+        margin: 30px auto;
+    }
+
+    .contato {
+        padding: 30px 20px;
+    }
+
+    .contato h2 {
+        font-size: 27px;
+    }
+
+    .rede {
+        padding: 15px;
+    }
+
+    .icone {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        margin-right: 13px;
+    }
+
+    .informacao h3 {
+        font-size: 17px;
+    }
+
+    .informacao p {
+        font-size: 13px;
+    }
+
+    .seta {
+        font-size: 22px;
+    }
+}
