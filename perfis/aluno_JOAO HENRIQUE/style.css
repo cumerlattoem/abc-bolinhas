@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 32rem;
+  background-color: rgba(24, 24, 27, 0.8);
+  border: 1px solid #27272a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+/* nav */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(39, 39, 42, 0.8);
+  font-size: 0.75rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: #a1a1aa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #e4e4e7;
+}
+
+.nav-link.ativo {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.nav-back {
+  color: #71717a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-back:hover {
+  color: #d4d4d8;
+}
+
+/* header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.profile-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.profile-subtitle {
+  font-size: 0.875rem;
+  color: #34d399;
+  font-weight: 500;
+}
+
+/* header secundario */
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.page-desc {
+  font-size: 0.875rem;
+  color: #a1a1aa;
+}
+
+/* texto */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #d4d4d8;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  margin-bottom: 2rem;
+}
+
+/* habilidades */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem;
+  background-color: rgba(39, 39, 42, 0.5);
+  border: 1px solid #27272a;
+  border-radius: 0.75rem;
+  transition: border-color 0.2s;
+}
+
+.skill-item:hover {
+  border-color: #3f3f46;
+}
+
+.skill-item i {
+  font-size: 1.125rem;
+  color: #34d399;
+}
+
+/* contatos */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem;
+  background-color: rgba(39, 39, 42, 0.5);
+  border: 1px solid #27272a;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.contact-card:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  background-color: rgba(39, 39, 42, 0.8);
+}
+
+.contact-label {
+  color: #a1a1aa;
+}
+
+.contact-value {
+  color: #34d399;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .contact-value {
+    font-size: 0.875rem;
+  }
+}
+
+.contact-card:hover .contact-value {
+  text-decoration: underline;
+}
+
+/* footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(39, 39, 42, 0.8);
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: #71717a;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer a:hover {
+  color: #d4d4d8;
+}
