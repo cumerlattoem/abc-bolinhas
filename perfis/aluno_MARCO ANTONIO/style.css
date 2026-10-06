@@ -1,0 +1,991 @@
+/* ==========================================================
+   Marco Antonio — módulo de perfil (Abc Bolinhas)
+   Base visual compartilhada por perfil, habilidades e contato.
+   Somente HTML + CSS, fontes do sistema, sem dependências.
+   ========================================================== */
+
+
+/* ---------- Variáveis ---------- */
+
+:root {
+    --c-fundo: #0e0d0c;
+    --c-fundo-elevado: #151412;
+    --c-folha: #1a1816;
+    --c-texto: #efe9df;
+    --c-texto-suave: #a39d93;
+    --c-texto-fraco: #6f6a62;
+    --c-linha: rgba(239, 233, 223, 0.12);
+    --c-linha-forte: rgba(239, 233, 223, 0.26);
+    --c-acento: #e2793b;
+
+    --fonte-texto: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    --fonte-mono: Consolas, "Cascadia Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --margem: clamp(1rem, 4vw, 3rem);
+    --largura-maxima: 1280px;
+    --curva: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+/* ---------- Reset básico ---------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ---------- Corpo ---------- */
+
+body {
+    min-height: 100vh;
+    background-color: var(--c-fundo);
+    color: var(--c-texto);
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background-color: var(--c-acento);
+    color: var(--c-fundo);
+}
+
+strong {
+    font-weight: 700;
+    color: var(--c-texto);
+}
+
+em {
+    font-style: normal;
+    color: var(--c-acento);
+}
+
+
+/* ---------- Links e foco ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s var(--curva);
+}
+
+:focus-visible {
+    outline: 2px solid var(--c-acento);
+    outline-offset: 4px;
+}
+
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: var(--margem);
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background-color: var(--c-acento);
+    color: var(--c-fundo);
+    font-weight: 700;
+}
+
+.pular-conteudo:focus {
+    top: 0.75rem;
+}
+
+
+/* ---------- Utilitários ---------- */
+
+.moldura {
+    width: 100%;
+    max-width: var(--largura-maxima);
+    margin-inline: auto;
+    padding-inline: var(--margem);
+}
+
+.acento {
+    color: var(--c-acento);
+}
+
+/* Etiqueta técnica em fonte mono */
+.rotulo {
+    font-family: var(--fonte-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-texto-suave);
+}
+
+
+/* ---------- Cabeçalho ---------- */
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(14, 13, 12, 0.94);
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.cabecalho__conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    min-height: 4.5rem;
+    padding-block: 0.75rem;
+}
+
+.marca {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+
+/* ---------- Navegação ---------- */
+
+.nav__lista {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1.75rem;
+}
+
+.nav__link {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    padding-block: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--c-texto-suave);
+}
+
+.nav__indice {
+    font-family: var(--fonte-mono);
+    font-size: 0.7rem;
+    color: var(--c-texto-fraco);
+}
+
+/* Sublinhado animado */
+.nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.2rem;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s var(--curva);
+}
+
+.nav__link:hover {
+    color: var(--c-texto);
+}
+
+.nav__link:hover::after,
+.nav__link:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Página atual */
+.nav__link.ativo {
+    color: var(--c-texto);
+}
+
+.nav__link.ativo .nav__indice {
+    color: var(--c-acento);
+}
+
+.nav__link.ativo::after {
+    background-color: var(--c-acento);
+    transform: scaleX(1);
+}
+
+.nav__link--voltar {
+    padding-left: 1.75rem;
+    border-left: 1px solid var(--c-linha);
+}
+
+.nav__link--voltar::after {
+    left: 1.75rem;
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+    padding-block: clamp(4rem, 10vw, 8rem) clamp(4rem, 8vw, 6.5rem);
+}
+
+.hero__grade {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: end;
+    gap: 3rem clamp(2rem, 5vw, 5rem);
+}
+
+.hero__rotulo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.hero__rotulo::before {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background-color: var(--c-acento);
+}
+
+.hero__titulo {
+    font-size: clamp(2.75rem, 7.5vw, 6.25rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    max-width: 11ch;
+}
+
+.hero__descricao {
+    max-width: 34rem;
+    margin-top: 2rem;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--c-texto-suave);
+}
+
+
+/* ---------- Terminal (apenas visual) ---------- */
+
+.terminal {
+    background-color: var(--c-folha);
+    border: 1px solid var(--c-linha-forte);
+    border-radius: 4px;
+    font-family: var(--fonte-mono);
+    font-size: 0.875rem;
+    overflow: hidden;
+}
+
+.terminal__topo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 1rem;
+    background-color: var(--c-fundo-elevado);
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.terminal__pontos {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.terminal__pontos span {
+    width: 0.55rem;
+    height: 0.55rem;
+    border: 1px solid var(--c-linha-forte);
+    border-radius: 50%;
+}
+
+.terminal__pontos span:first-child {
+    background-color: var(--c-acento);
+    border-color: var(--c-acento);
+}
+
+.terminal__caminho {
+    color: var(--c-texto-suave);
+    letter-spacing: 0.06em;
+}
+
+.terminal__linhas {
+    padding: 1.25rem 1rem 1.5rem;
+    counter-reset: linha;
+}
+
+.terminal__linhas li {
+    position: relative;
+    padding-left: 2.25rem;
+    line-height: 1.9;
+    color: var(--c-texto);
+    counter-increment: linha;
+}
+
+/* Numeração de linhas, como num editor */
+.terminal__linhas li::before {
+    content: counter(linha);
+    position: absolute;
+    left: 0;
+    width: 1.25rem;
+    text-align: right;
+    color: var(--c-texto-fraco);
+}
+
+.terminal__prompt {
+    color: var(--c-acento);
+}
+
+.terminal__saida {
+    color: var(--c-texto-suave);
+}
+
+.terminal__cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 0.3em;
+    vertical-align: text-bottom;
+    background-color: var(--c-acento);
+    animation: piscar 1.1s steps(1) infinite;
+}
+
+@keyframes piscar {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+/* ---------- Seções ---------- */
+
+.secao {
+    padding-block: clamp(4rem, 9vw, 7rem);
+    border-top: 1px solid var(--c-linha);
+}
+
+.secao__cabecalho {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.secao__titulo {
+    font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.secao__numero {
+    font-family: var(--fonte-mono);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--c-acento);
+    vertical-align: super;
+}
+
+
+/* ---------- Sobre / ficha ---------- */
+
+.sobre {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+    gap: 2.5rem clamp(2rem, 5vw, 5rem);
+}
+
+.ficha {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.ficha__linha {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.ficha__linha dt {
+    padding-top: 0.2rem;
+}
+
+.ficha__linha dd {
+    font-size: 1.05rem;
+}
+
+.sobre__texto {
+    font-size: clamp(1.3rem, 2.3vw, 2rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--c-texto-suave);
+}
+
+
+/* ---------- Formação / jornada ---------- */
+
+.formacao {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+    gap: 3rem clamp(2rem, 6vw, 6rem);
+}
+
+.formacao__instituicao {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.formacao__nome {
+    margin-top: 1rem;
+    font-size: clamp(2rem, 4.5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.formacao__ano {
+    margin-top: 1.25rem;
+    color: var(--c-acento);
+}
+
+.jornada {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.jornada__etapas {
+    margin-top: 0.5rem;
+}
+
+.jornada__etapa {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--c-linha);
+    font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+    color: var(--c-texto-suave);
+}
+
+.jornada__etapa .rotulo {
+    min-width: 1.75rem;
+    color: var(--c-texto-fraco);
+}
+
+/* Etapa atual em destaque */
+.jornada__etapa--destaque {
+    color: var(--c-texto);
+}
+
+.jornada__etapa--destaque .rotulo {
+    color: var(--c-acento);
+}
+
+
+/* ---------- CTAs ---------- */
+
+.cta__titulo {
+    margin-bottom: 1.5rem;
+}
+
+.cta__lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.cta__link {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--c-linha);
+    font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.cta__lista li + li .cta__link {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    border-left: 1px solid var(--c-linha);
+}
+
+.cta__indice {
+    align-self: center;
+}
+
+.cta__seta {
+    margin-left: auto;
+    padding-right: 0.25rem;
+    color: var(--c-acento);
+    transition: transform 0.3s var(--curva);
+}
+
+.cta__link:hover {
+    color: var(--c-acento);
+}
+
+.cta__link:hover .cta__seta,
+.cta__link:focus-visible .cta__seta {
+    transform: translateX(0.4rem);
+}
+
+/* Variante "voltar": seta à esquerda */
+.cta__link--voltar .cta__seta {
+    margin-left: 0;
+    padding-right: 0;
+}
+
+.cta__link--voltar:hover .cta__seta,
+.cta__link--voltar:focus-visible .cta__seta {
+    transform: translateX(-0.4rem);
+}
+
+
+/* ==========================================================
+   Habilidades e projetos (habilidades.html)
+   ========================================================== */
+
+/* Texto oculto visualmente, mas lido por leitores de tela */
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.secao__intro {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    color: var(--c-texto-suave);
+}
+
+
+/* ---------- Stack ---------- */
+
+.stack {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.stack__grupo {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 13rem) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 1rem clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(1.5rem, 3vw, 2.25rem);
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.stack__indice {
+    color: var(--c-acento);
+}
+
+.stack__itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem clamp(1.25rem, 3vw, 2.75rem);
+    font-size: clamp(1.6rem, 3.4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.stack__itens li {
+    transition: color 0.25s var(--curva);
+}
+
+.stack__grupo:hover .stack__itens li {
+    color: var(--c-texto-suave);
+}
+
+.stack__grupo:hover .stack__itens li:hover {
+    color: var(--c-texto);
+}
+
+
+/* ---------- Projetos ---------- */
+
+.projetos {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.projeto {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 10fr);
+    gap: 1rem clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.projeto__numero {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--c-texto-fraco);
+    transition: color 0.3s var(--curva);
+}
+
+.projeto:hover .projeto__numero {
+    color: var(--c-acento);
+}
+
+.projeto__corpo {
+    max-width: 52rem;
+}
+
+.projeto__titulo {
+    margin-top: 0.75rem;
+    font-size: clamp(1.75rem, 3.6vw, 3rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.projeto__contexto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    margin-top: 1rem;
+    color: var(--c-texto);
+}
+
+.projeto__descricao {
+    margin-top: 1.25rem;
+    font-size: 1.1rem;
+    color: var(--c-texto-suave);
+}
+
+/* Contribuição: marcada por borda e por rótulo, não só por cor */
+.projeto__contribuicao {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--c-acento);
+}
+
+.projeto__contribuicao-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.projeto__contribuicao-itens li + li::before {
+    content: "/";
+    margin-right: 0.6rem;
+    color: var(--c-texto-fraco);
+    font-weight: 400;
+}
+
+.projeto__rodape {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-linha);
+}
+
+.projeto__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+}
+
+
+/* ---------- Tags de tecnologia ---------- */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.tags li {
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--c-linha-forte);
+    border-radius: 2px;
+    font-family: var(--fonte-mono);
+    font-size: 0.8rem;
+    color: var(--c-texto);
+}
+
+
+/* ---------- Link externo ---------- */
+
+.link-externo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    border-bottom: 1px solid var(--c-linha-forte);
+    font-weight: 700;
+}
+
+.link-externo span {
+    color: var(--c-acento);
+    transition: transform 0.3s var(--curva);
+}
+
+.link-externo:hover {
+    color: var(--c-acento);
+    border-bottom-color: var(--c-acento);
+}
+
+.link-externo:hover span,
+.link-externo:focus-visible span {
+    transform: translate(0.15rem, -0.15rem);
+}
+
+
+/* ---------- Outros projetos ---------- */
+
+.outros {
+    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.outros__cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.outros__lista {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.outros__link {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 4fr) minmax(0, 6fr) 6rem 1.5rem;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+    padding-block: 1.1rem;
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.outros__nome {
+    font-weight: 700;
+}
+
+.outros__descricao {
+    color: var(--c-texto-suave);
+    font-size: 0.95rem;
+}
+
+.outros__seta {
+    color: var(--c-acento);
+    text-align: right;
+    transition: transform 0.3s var(--curva);
+}
+
+.outros__link:hover .outros__nome {
+    color: var(--c-acento);
+}
+
+.outros__link:hover .outros__seta,
+.outros__link:focus-visible .outros__seta {
+    transform: translate(0.15rem, -0.15rem);
+}
+
+
+/* ---------- Habilidades: responsividade ---------- */
+
+@media (max-width: 900px) {
+    .stack__grupo {
+        grid-template-columns: 3rem minmax(0, 1fr);
+    }
+
+    .stack__itens {
+        grid-column: 1 / -1;
+    }
+
+    .projeto {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .outros__link {
+        grid-template-columns: 3rem minmax(0, 1fr) 1.5rem;
+    }
+
+    .outros__descricao,
+    .outros__tecnologias {
+        grid-column: 2 / 3;
+    }
+
+    .outros__seta {
+        grid-column: 3;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .projeto__rodape {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .outros__link {
+        grid-template-columns: 2.25rem minmax(0, 1fr) 1.25rem;
+        gap: 0.35rem 0.75rem;
+    }
+}
+
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+    border-top: 1px solid var(--c-linha);
+}
+
+.rodape__conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    padding-block: 2rem;
+}
+
+.rodape__marca {
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.rodape__voltar {
+    padding-block: 0.5rem;
+}
+
+.rodape__voltar:hover {
+    color: var(--c-acento);
+}
+
+
+/* ---------- Responsividade ---------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .hero__grade,
+    .sobre,
+    .formacao {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .terminal {
+        max-width: 32rem;
+    }
+}
+
+/* Celular (~390px) */
+@media (max-width: 600px) {
+    .cabecalho {
+        position: static;
+    }
+
+    .cabecalho__conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav__lista {
+        gap: 0.1rem 1.1rem;
+    }
+
+    .nav__link {
+        font-size: 0.9rem;
+    }
+
+    /* "← Abc Bolinhas" ocupa a linha de baixo */
+    .nav__lista li:last-child {
+        flex-basis: 100%;
+    }
+
+    .nav__link--voltar {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .nav__link--voltar::after {
+        left: 0;
+    }
+
+    .terminal {
+        font-size: 0.8rem;
+    }
+
+    .ficha__linha {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.25rem;
+    }
+
+    .cta__lista {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cta__lista li + li .cta__link {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .rodape__conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* ==========================================================
+   Contato (contato.html)
+   ========================================================== */
+
+/* Título mais longo: escala menor e linha mais larga */
+.hero__titulo--contato {
+    font-size: clamp(2.25rem, 4.6vw, 4rem);
+    line-height: 1;
+    max-width: 18ch;
+}
+
+/* "Vamos conversar." em linha própria, além da cor */
+.hero__destaque {
+    display: block;
+    margin-top: 0.15em;
+    font-style: normal;
+    color: var(--c-acento);
+}

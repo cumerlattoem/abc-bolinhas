@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil de Marco Antonio De Oliveira Rodrigues, desenvolvedor Full Stack em formação.">
+    <meta name="color-scheme" content="dark">
+
+    <title>Marco | Perfil</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+        <div class="cabecalho__conteudo moldura">
+            <a class="marca" href="perfil.html" aria-label="Marco, página de perfil">
+                MARCO<span class="acento">.</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegação do perfil">
+                <ul class="nav__lista">
+                    <li>
+                        <a class="nav__link ativo" href="perfil.html" aria-current="page">
+                            <span class="nav__indice" aria-hidden="true">01</span>
+                            Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="habilidades.html">
+                            <span class="nav__indice" aria-hidden="true">02</span>
+                            Habilidades
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="contato.html">
+                            <span class="nav__indice" aria-hidden="true">03</span>
+                            Contato
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link nav__link--voltar" href="../../index.html">
+                            <span aria-hidden="true">←</span>
+                            Abc Bolinhas
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- Abertura -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <div class="hero__grade moldura">
+                <div class="hero__texto">
+                    <p class="rotulo hero__rotulo">Desenvolvedor Full Stack em formação</p>
+
+                    <h1 id="hero-titulo" class="hero__titulo">
+                        Construindo ideias em software<span class="acento">.</span>
+                    </h1>
+
+                    <p class="hero__descricao">
+                        Marco está em formação como desenvolvedor Full Stack,
+                        com foco atual em <strong>C#/.NET</strong> e <strong>Angular</strong>.
+                    </p>
+                </div>
+
+                <!-- Bloco visual inspirado em terminal (decorativo, sem funcionalidade) -->
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal__topo">
+                        <span class="terminal__pontos">
+                            <span></span><span></span><span></span>
+                        </span>
+                        <span class="terminal__caminho">~/marco</span>
+                    </div>
+
+                    <ol class="terminal__linhas">
+                        <li><span class="terminal__prompt">$</span> whoami</li>
+                        <li class="terminal__saida">marco antonio</li>
+                        <li><span class="terminal__prompt">$</span> cat foco.txt</li>
+                        <li class="terminal__saida">C# / .NET <span class="acento">+</span> Angular</li>
+                        <li><span class="terminal__prompt">$</span> pwd</li>
+                        <li class="terminal__saida">lages — sc / brasil</li>
+                        <li><span class="terminal__prompt">$</span> status</li>
+                        <li class="terminal__saida">
+                            full stack em formação<span class="terminal__cursor"></span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre -->
+        <section class="secao" aria-labelledby="sobre-titulo">
+            <div class="moldura">
+                <header class="secao__cabecalho">
+                    <h2 id="sobre-titulo" class="secao__titulo">
+                        Sobre <span class="secao__numero">/ 01</span>
+                    </h2>
+                </header>
+
+                <div class="sobre">
+                    <dl class="ficha">
+                        <div class="ficha__linha">
+                            <dt class="rotulo">Nome</dt>
+                            <dd>Marco Antonio De Oliveira Rodrigues</dd>
+                        </div>
+                        <div class="ficha__linha">
+                            <dt class="rotulo">Momento</dt>
+                            <dd>Desenvolvedor Full Stack em formação</dd>
+                        </div>
+                        <div class="ficha__linha">
+                            <dt class="rotulo">Foco</dt>
+                            <dd>C# / .NET + Angular</dd>
+                        </div>
+                        <div class="ficha__linha">
+                            <dt class="rotulo">Base</dt>
+                            <dd>Lages — SC / Brasil</dd>
+                        </div>
+                    </dl>
+
+                    <p class="sobre__texto">
+                        Estou me formando como desenvolvedor Full Stack na
+                        Academia do Programador. Hoje meu foco está no
+                        back-end com <strong>C#/.NET</strong> e no front-end
+                        com <strong>Angular</strong>, transformando o que
+                        estudo em <em>software que funciona</em>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação -->
+        <section class="secao" aria-labelledby="formacao-titulo">
+            <div class="moldura">
+                <header class="secao__cabecalho">
+                    <h2 id="formacao-titulo" class="secao__titulo">
+                        Formação <span class="secao__numero">/ 02</span>
+                    </h2>
+                </header>
+
+                <div class="formacao">
+                    <div class="formacao__instituicao">
+                        <p class="rotulo">Formação</p>
+                        <h3 class="formacao__nome">Academia do Programador</h3>
+                        <p class="formacao__ano rotulo">2026</p>
+                    </div>
+
+                    <div class="jornada">
+                        <p class="rotulo jornada__titulo">Jornada</p>
+
+                        <ol class="jornada__etapas">
+                            <li class="jornada__etapa">
+                                <span class="rotulo" aria-hidden="true">01</span>
+                                Estudo
+                            </li>
+                            <li class="jornada__etapa">
+                                <span class="rotulo" aria-hidden="true">02</span>
+                                Projetos acadêmicos
+                            </li>
+                            <li class="jornada__etapa">
+                                <span class="rotulo" aria-hidden="true">03</span>
+                                Aplicações reais
+                            </li>
+                            <li class="jornada__etapa jornada__etapa--destaque">
+                                <span class="rotulo" aria-hidden="true">04</span>
+                                Produto / SaaS
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos passos -->
+        <section class="secao cta" aria-labelledby="cta-titulo">
+            <div class="moldura">
+                <h2 id="cta-titulo" class="rotulo cta__titulo">Continue navegando</h2>
+
+                <ul class="cta__lista">
+                    <li>
+                        <a class="cta__link" href="habilidades.html">
+                            <span class="rotulo cta__indice" aria-hidden="true">02</span>
+                            Explorar habilidades
+                            <span class="cta__seta" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cta__link" href="contato.html">
+                            <span class="rotulo cta__indice" aria-hidden="true">03</span>
+                            Entrar em contato
+                            <span class="cta__seta" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape__conteudo moldura">
+            <p class="rodape__marca">
+                MARCO <span class="acento">—</span> 2026 · Abc Bolinhas
+            </p>
+
+            <a class="rodape__voltar rotulo" href="../../index.html">
+                ← Voltar ao Abc Bolinhas
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
