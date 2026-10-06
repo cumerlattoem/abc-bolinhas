@@ -977,9 +977,9 @@ a {
 
 /* Título mais longo: escala menor e linha mais larga */
 .hero__titulo--contato {
-    font-size: clamp(2.25rem, 5.5vw, 4.75rem);
+    font-size: clamp(2.25rem, 4.6vw, 4rem);
     line-height: 1;
-    max-width: 16ch;
+    max-width: 18ch;
 }
 
 /* "Vamos conversar." em linha própria, além da cor */
