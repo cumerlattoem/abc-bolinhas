@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contato de Marco Antonio De Oliveira Rodrigues, desenvolvedor Full Stack em formação.">
+    <meta name="color-scheme" content="dark">
+
+    <title>Marco | Contato</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+        <div class="cabecalho__conteudo moldura">
+            <a class="marca" href="perfil.html" aria-label="Marco, página de perfil">
+                MARCO<span class="acento">.</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegação do perfil">
+                <ul class="nav__lista">
+                    <li>
+                        <a class="nav__link" href="perfil.html">
+                            <span class="nav__indice" aria-hidden="true">01</span>
+                            Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="habilidades.html">
+                            <span class="nav__indice" aria-hidden="true">02</span>
+                            Habilidades
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link ativo" href="contato.html" aria-current="page">
+                            <span class="nav__indice" aria-hidden="true">03</span>
+                            Contato
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link nav__link--voltar" href="../../index.html">
+                            <span aria-hidden="true">←</span>
+                            Abc Bolinhas
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- Abertura -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <div class="hero__grade moldura">
+                <div class="hero__texto">
+                    <p class="rotulo hero__rotulo">Contato</p>
+
+                    <h1 id="hero-titulo" class="hero__titulo hero__titulo--contato">
+                        Tem uma ideia, um projeto ou uma oportunidade?
+                        <em class="hero__destaque">Vamos conversar.</em>
+                    </h1>
+
+                    <p class="hero__descricao">
+                        Se quiser trocar uma ideia sobre algum dos projetos ou sobre
+                        o que estou estudando, o canal mais direto hoje é o
+                        <strong>GitHub</strong>.
+                    </p>
+                </div>
+
+                <!-- Bloco visual inspirado em terminal (decorativo, sem funcionalidade) -->
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal__topo">
+                        <span class="terminal__pontos">
+                            <span></span><span></span><span></span>
+                        </span>
+                        <span class="terminal__caminho">~/marco/contato</span>
+                    </div>
+
+                    <ol class="terminal__linhas">
+                        <li><span class="terminal__prompt">$</span> whereis marco</li>
+                        <li class="terminal__saida">lages — sc / brasil</li>
+                        <li><span class="terminal__prompt">$</span> open github</li>
+                        <li class="terminal__saida">
+                            github.com/Marco-Oliver<span class="terminal__cursor"></span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canais -->
+        <section class="secao" aria-labelledby="contato-titulo">
+            <div class="moldura">
+                <header class="secao__cabecalho">
+                    <h2 id="contato-titulo" class="secao__titulo">
+                        Contato <span class="secao__numero">/ 01</span>
+                    </h2>
+                </header>
+
+                <div class="sobre">
+                    <dl class="ficha">
+                        <div class="ficha__linha">
+                            <dt class="rotulo">GitHub</dt>
+                            <dd>
+                                <a class="link-externo"
+                                   href="https://github.com/Marco-Oliver"
+                                   target="_blank" rel="noopener noreferrer">
+                                    Marco-Oliver <span aria-hidden="true">↗</span>
+                                    <span class="visualmente-oculto">(abre em nova aba)</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="ficha__linha">
+                            <dt class="rotulo">Nome</dt>
+                            <dd>Marco Antonio De Oliveira Rodrigues</dd>
+                        </div>
+                        <div class="ficha__linha">
+                            <dt class="rotulo">Base</dt>
+                            <dd>Lages — SC / Brasil</dd>
+                        </div>
+                    </dl>
+
+                    <p class="sobre__texto">
+                        Por enquanto, o <strong>GitHub</strong> é o único canal
+                        publicado aqui. É por lá que dá para acompanhar o código
+                        do que estou <em>estudando e construindo</em>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos passos -->
+        <section class="secao cta" aria-labelledby="cta-titulo">
+            <div class="moldura">
+                <h2 id="cta-titulo" class="rotulo cta__titulo">Continue navegando</h2>
+
+                <ul class="cta__lista">
+                    <li>
+                        <a class="cta__link cta__link--voltar" href="habilidades.html">
+                            <span class="cta__seta" aria-hidden="true">←</span>
+                            Ver habilidades
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cta__link" href="perfil.html">
+                            <span class="rotulo cta__indice" aria-hidden="true">01</span>
+                            Voltar ao perfil
+                            <span class="cta__seta" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape__conteudo moldura">
+            <p class="rodape__marca">
+                MARCO <span class="acento">—</span> 2026 · Abc Bolinhas
+            </p>
+
+            <a class="rodape__voltar rotulo" href="../../index.html">
+                ← Voltar ao Abc Bolinhas
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -969,3 +969,23 @@ a {
         transition: none !important;
     }
 }
+
+
+/* ==========================================================
+   Contato (contato.html)
+   ========================================================== */
+
+/* Título mais longo: escala menor e linha mais larga */
+.hero__titulo--contato {
+    font-size: clamp(2.25rem, 5.5vw, 4.75rem);
+    line-height: 1;
+    max-width: 16ch;
+}
+
+/* "Vamos conversar." em linha própria, além da cor */
+.hero__destaque {
+    display: block;
+    margin-top: 0.15em;
+    font-style: normal;
+    color: var(--c-acento);
+}
