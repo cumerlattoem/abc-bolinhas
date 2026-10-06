@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stack e projetos de Marco Antonio De Oliveira Rodrigues, desenvolvedor Full Stack em formação.">
+    <meta name="color-scheme" content="dark">
+
+    <title>Marco | Habilidades</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="cabecalho">
+        <div class="cabecalho__conteudo moldura">
+            <a class="marca" href="perfil.html" aria-label="Marco, página de perfil">
+                MARCO<span class="acento">.</span>
+            </a>
+
+            <nav class="nav" aria-label="Navegação do perfil">
+                <ul class="nav__lista">
+                    <li>
+                        <a class="nav__link" href="perfil.html">
+                            <span class="nav__indice" aria-hidden="true">01</span>
+                            Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link ativo" href="habilidades.html" aria-current="page">
+                            <span class="nav__indice" aria-hidden="true">02</span>
+                            Habilidades
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link" href="contato.html">
+                            <span class="nav__indice" aria-hidden="true">03</span>
+                            Contato
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav__link nav__link--voltar" href="../../index.html">
+                            <span aria-hidden="true">←</span>
+                            Abc Bolinhas
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- Abertura -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <div class="hero__grade moldura">
+                <div class="hero__texto">
+                    <p class="rotulo hero__rotulo">Habilidades &amp; projetos</p>
+
+                    <h1 id="hero-titulo" class="hero__titulo">
+                        Tecnologias que uso para construir<span class="acento">.</span>
+                    </h1>
+
+                    <p class="hero__descricao">
+                        Do back-end em <strong>C#/.NET</strong> à interface em
+                        <strong>Angular</strong>: estas são as ferramentas que venho
+                        usando nos projetos da formação e no Waxlo.Saas.
+                    </p>
+                </div>
+
+                <!-- Bloco visual inspirado em terminal (decorativo, sem funcionalidade) -->
+                <div class="terminal" aria-hidden="true">
+                    <div class="terminal__topo">
+                        <span class="terminal__pontos">
+                            <span></span><span></span><span></span>
+                        </span>
+                        <span class="terminal__caminho">~/marco/projetos</span>
+                    </div>
+
+                    <ol class="terminal__linhas">
+                        <li><span class="terminal__prompt">$</span> ls</li>
+                        <li class="terminal__saida">waxlo.saas/</li>
+                        <li class="terminal__saida">gerador-de-certificados/</li>
+                        <li class="terminal__saida">gestao-para-bares/</li>
+                        <li class="terminal__saida">e-agenda/</li>
+                        <li><span class="terminal__prompt">$</span> cat stack.txt</li>
+                        <li class="terminal__saida">
+                            C# · .NET · Angular<span class="terminal__cursor"></span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stack -->
+        <section class="secao" aria-labelledby="stack-titulo">
+            <div class="moldura">
+                <header class="secao__cabecalho">
+                    <h2 id="stack-titulo" class="secao__titulo">
+                        Stack <span class="secao__numero">/ 01</span>
+                    </h2>
+                    <p class="secao__intro">
+                        Organizada por área. Sem porcentagens: o que conta é o
+                        que já foi usado em projeto.
+                    </p>
+                </header>
+
+                <div class="stack">
+                    <div class="stack__grupo">
+                        <span class="rotulo stack__indice" aria-hidden="true">01</span>
+                        <h3 class="rotulo stack__categoria">Front-end</h3>
+                        <ul class="stack__itens">
+                            <li>Angular</li>
+                            <li>TypeScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack__grupo">
+                        <span class="rotulo stack__indice" aria-hidden="true">02</span>
+                        <h3 class="rotulo stack__categoria">Back-end</h3>
+                        <ul class="stack__itens">
+                            <li>C#</li>
+                            <li>.NET</li>
+                            <li>REST APIs</li>
+                            <li>EF Core</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack__grupo">
+                        <span class="rotulo stack__indice" aria-hidden="true">03</span>
+                        <h3 class="rotulo stack__categoria">Dados / Ferramentas</h3>
+                        <ul class="stack__itens">
+                            <li>PostgreSQL</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section class="secao" aria-labelledby="projetos-titulo">
+            <div class="moldura">
+                <header class="secao__cabecalho">
+                    <h2 id="projetos-titulo" class="secao__titulo">
+                        Projetos <span class="secao__numero">/ 02</span>
+                    </h2>
+                    <p class="secao__intro">
+                        Onde coloco em prática o que estudo, do back-end à interface.
+                        Projetos feitos em equipe estão sinalizados.
+                    </p>
+                </header>
+
+                <ol class="projetos">
+
+                    <!-- 01 -->
+                    <li class="projeto">
+                        <span class="projeto__numero" aria-hidden="true">01</span>
+
+                        <article class="projeto__corpo" aria-labelledby="projeto-waxlo">
+                            <p class="rotulo">SaaS / Full Stack</p>
+                            <h3 id="projeto-waxlo" class="projeto__titulo">Waxlo.Saas</h3>
+                            <p class="projeto__contexto">
+                                <span class="rotulo">Contexto</span>
+                                Produto em desenvolvimento
+                            </p>
+
+                            <p class="projeto__descricao">
+                                Plataforma SaaS voltada para personal trainers, criada para
+                                centralizar gestão de alunos, agenda, treinos e recursos do
+                                dia a dia profissional.
+                            </p>
+
+                            <div class="projeto__rodape">
+                                <div>
+                                    <p class="rotulo">Stack</p>
+                                    <ul class="tags" aria-label="Tecnologias do Waxlo.Saas">
+                                        <li>Angular</li>
+                                        <li>TypeScript</li>
+                                        <li>C#</li>
+                                        <li>.NET</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+
+                    <!-- 02 -->
+                    <li class="projeto">
+                        <span class="projeto__numero" aria-hidden="true">02</span>
+
+                        <article class="projeto__corpo" aria-labelledby="projeto-certificados">
+                            <p class="rotulo">API / Back-end / Projeto acadêmico</p>
+                            <h3 id="projeto-certificados" class="projeto__titulo">
+                                Gerador de Certificados Online
+                            </h3>
+                            <p class="projeto__contexto">
+                                <span class="rotulo">Contexto</span>
+                                Projeto em equipe · Academia do Programador
+                            </p>
+
+                            <p class="projeto__descricao">
+                                Sistema para gerenciamento de cursos e geração automatizada
+                                de certificados, com arquitetura em camadas, API,
+                                persistência em banco de dados e testes automatizados.
+                            </p>
+
+                            <div class="projeto__rodape">
+                                <div>
+                                    <p class="rotulo">Stack</p>
+                                    <ul class="tags" aria-label="Tecnologias do Gerador de Certificados">
+                                        <li>C#</li>
+                                        <li>.NET</li>
+                                        <li>PostgreSQL</li>
+                                        <li>Docker</li>
+                                    </ul>
+                                </div>
+
+                                <div class="projeto__links">
+                                    <a class="link-externo"
+                                       href="https://github.com/netos-do-velho-barrero/online-certificate-generator-adp"
+                                       target="_blank" rel="noopener noreferrer"
+                                       aria-label="Repositório do Gerador de Certificados no GitHub (abre em nova aba)">
+                                        Repositório <span aria-hidden="true">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+
+                    <!-- 03 -->
+                    <li class="projeto">
+                        <span class="projeto__numero" aria-hidden="true">03</span>
+
+                        <article class="projeto__corpo" aria-labelledby="projeto-bares">
+                            <p class="rotulo">Sistema / Full Stack acadêmico</p>
+                            <h3 id="projeto-bares" class="projeto__titulo">
+                                Sistema de Gestão para Bares
+                            </h3>
+                            <p class="projeto__contexto">
+                                <span class="rotulo">Contexto</span>
+                                Projeto em equipe · Academia do Programador
+                            </p>
+
+                            <p class="projeto__descricao">
+                                Sistema multi-tenant para gestão de bares, com mesas,
+                                garçons, produtos, contas, pedidos e faturamento.
+                            </p>
+
+                            <div class="projeto__contribuicao">
+                                <p class="rotulo">Minha contribuição</p>
+                                <ul class="projeto__contribuicao-itens">
+                                    <li>Produtos</li>
+                                    <li>Pedidos da Conta</li>
+                                    <li>Faturamento</li>
+                                </ul>
+                            </div>
+
+                            <div class="projeto__rodape">
+                                <div>
+                                    <p class="rotulo">Stack</p>
+                                    <ul class="tags" aria-label="Tecnologias do Sistema de Gestão para Bares">
+                                        <li>C#</li>
+                                        <li>.NET</li>
+                                        <li>ASP.NET Core</li>
+                                        <li>EF Core</li>
+                                    </ul>
+                                </div>
+
+                                <div class="projeto__links">
+                                    <a class="link-externo"
+                                       href="https://github.com/netos-do-velho-barrero/bar-management-system"
+                                       target="_blank" rel="noopener noreferrer"
+                                       aria-label="Repositório do Sistema de Gestão para Bares no GitHub (abre em nova aba)">
+                                        Repositório <span aria-hidden="true">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+
+                    <!-- 04 -->
+                    <li class="projeto">
+                        <span class="projeto__numero" aria-hidden="true">04</span>
+
+                        <article class="projeto__corpo" aria-labelledby="projeto-eagenda">
+                            <p class="rotulo">Aplicação Web / Qualidade de Software</p>
+                            <h3 id="projeto-eagenda" class="projeto__titulo">
+                                e-Agenda + Testes Automatizados
+                            </h3>
+                            <p class="projeto__contexto">
+                                <span class="rotulo">Contexto</span>
+                                Projeto em equipe · Academia do Programador
+                            </p>
+
+                            <p class="projeto__descricao">
+                                Aplicação web para gerenciar contatos, compromissos,
+                                despesas, categorias e tarefas, acompanhada de uma suíte
+                                de testes unitários, de integração e E2E.
+                            </p>
+
+                            <div class="projeto__rodape">
+                                <div>
+                                    <p class="rotulo">Stack</p>
+                                    <ul class="tags" aria-label="Tecnologias do e-Agenda">
+                                        <li>C#</li>
+                                        <li>.NET</li>
+                                        <li>xUnit</li>
+                                    </ul>
+                                </div>
+
+                                <div class="projeto__links">
+                                    <a class="link-externo"
+                                       href="https://github.com/netos-do-velho-barrero/e-agenda-web-adp"
+                                       target="_blank" rel="noopener noreferrer"
+                                       aria-label="Repositório do e-Agenda Web no GitHub (abre em nova aba)">
+                                        e-Agenda Web <span aria-hidden="true">↗</span>
+                                    </a>
+                                    <a class="link-externo"
+                                       href="https://github.com/netos-do-velho-barrero/eagenda-automated-tests"
+                                       target="_blank" rel="noopener noreferrer"
+                                       aria-label="Repositório dos testes automatizados do e-Agenda no GitHub (abre em nova aba)">
+                                        Testes automatizados <span aria-hidden="true">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+
+                </ol>
+
+                <!-- Outros projetos: lista compacta -->
+                <div class="outros">
+                    <div class="outros__cabecalho">
+                        <h3 class="rotulo outros__titulo">Outros projetos / estudo</h3>
+                        <a class="link-externo"
+                           href="https://github.com/Marco-Oliver"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="GitHub de Marco (abre em nova aba)">
+                            GitHub <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+
+                    <ol class="outros__lista">
+                        <li>
+                            <a class="outros__link"
+                               href="https://github.com/netos-do-velho-barrero/course-management-system-adp"
+                               target="_blank" rel="noopener noreferrer">
+                                <span class="rotulo outros__numero" aria-hidden="true">05</span>
+                                <span class="outros__nome">Course Management System</span>
+                                <span class="outros__descricao">Gestão acadêmica: cursos, instrutores, turmas, alunos e matrículas</span>
+                                <span class="rotulo outros__tecnologias">C# / HTML</span>
+                                <span class="outros__seta" aria-hidden="true">↗</span>
+                                <span class="visualmente-oculto">(abre em nova aba)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="outros__link"
+                               href="https://github.com/netos-do-velho-barrero/medication-control-web-adp"
+                               target="_blank" rel="noopener noreferrer">
+                                <span class="rotulo outros__numero" aria-hidden="true">06</span>
+                                <span class="outros__nome">Medication Control Web</span>
+                                <span class="outros__descricao">Aplicação web: estoque e validade de medicamentos</span>
+                                <span class="rotulo outros__tecnologias">C# / HTML</span>
+                                <span class="outros__seta" aria-hidden="true">↗</span>
+                                <span class="visualmente-oculto">(abre em nova aba)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="outros__link"
+                               href="https://github.com/netos-do-velho-barrero/shopping-list-web-adp"
+                               target="_blank" rel="noopener noreferrer">
+                                <span class="rotulo outros__numero" aria-hidden="true">07</span>
+                                <span class="outros__nome">Shopping List Web</span>
+                                <span class="outros__descricao">Aplicação web: listas de compras, categorias e quantidades</span>
+                                <span class="rotulo outros__tecnologias">C# / HTML</span>
+                                <span class="outros__seta" aria-hidden="true">↗</span>
+                                <span class="visualmente-oculto">(abre em nova aba)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="outros__link"
+                               href="https://github.com/netos-do-velho-barrero/reading-club-web-adp"
+                               target="_blank" rel="noopener noreferrer">
+                                <span class="rotulo outros__numero" aria-hidden="true">08</span>
+                                <span class="outros__nome">Reading Club Web</span>
+                                <span class="outros__descricao">Aplicação web: clube de leitura, empréstimos e histórico de membros</span>
+                                <span class="rotulo outros__tecnologias">C# / HTML</span>
+                                <span class="outros__seta" aria-hidden="true">↗</span>
+                                <span class="visualmente-oculto">(abre em nova aba)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="outros__link"
+                               href="https://github.com/netos-do-velho-barrero/medication-control-system-adp"
+                               target="_blank" rel="noopener noreferrer">
+                                <span class="rotulo outros__numero" aria-hidden="true">09</span>
+                                <span class="outros__nome">Medication Control System</span>
+                                <span class="outros__descricao">Sistema em C# com orientação a objetos: estoque, validade e horários</span>
+                                <span class="rotulo outros__tecnologias">C#</span>
+                                <span class="outros__seta" aria-hidden="true">↗</span>
+                                <span class="visualmente-oculto">(abre em nova aba)</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos passos -->
+        <section class="secao cta" aria-labelledby="cta-titulo">
+            <div class="moldura">
+                <h2 id="cta-titulo" class="rotulo cta__titulo">Continue navegando</h2>
+
+                <ul class="cta__lista">
+                    <li>
+                        <a class="cta__link cta__link--voltar" href="perfil.html">
+                            <span class="cta__seta" aria-hidden="true">←</span>
+                            Voltar ao perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cta__link" href="contato.html">
+                            <span class="rotulo cta__indice" aria-hidden="true">03</span>
+                            Entrar em contato
+                            <span class="cta__seta" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape__conteudo moldura">
+            <p class="rodape__marca">
+                MARCO <span class="acento">—</span> 2026 · Abc Bolinhas
+            </p>
+
+            <a class="rodape__voltar rotulo" href="../../index.html">
+                ← Voltar ao Abc Bolinhas
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>

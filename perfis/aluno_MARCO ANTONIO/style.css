@@ -541,6 +541,317 @@ a {
     transform: translateX(0.4rem);
 }
 
+/* Variante "voltar": seta à esquerda */
+.cta__link--voltar .cta__seta {
+    margin-left: 0;
+    padding-right: 0;
+}
+
+.cta__link--voltar:hover .cta__seta,
+.cta__link--voltar:focus-visible .cta__seta {
+    transform: translateX(-0.4rem);
+}
+
+
+/* ==========================================================
+   Habilidades e projetos (habilidades.html)
+   ========================================================== */
+
+/* Texto oculto visualmente, mas lido por leitores de tela */
+.visualmente-oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.secao__intro {
+    max-width: 36rem;
+    margin-top: 1.25rem;
+    color: var(--c-texto-suave);
+}
+
+
+/* ---------- Stack ---------- */
+
+.stack {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.stack__grupo {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 13rem) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 1rem clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(1.5rem, 3vw, 2.25rem);
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.stack__indice {
+    color: var(--c-acento);
+}
+
+.stack__itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem clamp(1.25rem, 3vw, 2.75rem);
+    font-size: clamp(1.6rem, 3.4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.stack__itens li {
+    transition: color 0.25s var(--curva);
+}
+
+.stack__grupo:hover .stack__itens li {
+    color: var(--c-texto-suave);
+}
+
+.stack__grupo:hover .stack__itens li:hover {
+    color: var(--c-texto);
+}
+
+
+/* ---------- Projetos ---------- */
+
+.projetos {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.projeto {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 10fr);
+    gap: 1rem clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.projeto__numero {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--c-texto-fraco);
+    transition: color 0.3s var(--curva);
+}
+
+.projeto:hover .projeto__numero {
+    color: var(--c-acento);
+}
+
+.projeto__corpo {
+    max-width: 52rem;
+}
+
+.projeto__titulo {
+    margin-top: 0.75rem;
+    font-size: clamp(1.75rem, 3.6vw, 3rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+}
+
+.projeto__contexto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    margin-top: 1rem;
+    color: var(--c-texto);
+}
+
+.projeto__descricao {
+    margin-top: 1.25rem;
+    font-size: 1.1rem;
+    color: var(--c-texto-suave);
+}
+
+/* Contribuição: marcada por borda e por rótulo, não só por cor */
+.projeto__contribuicao {
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--c-acento);
+}
+
+.projeto__contribuicao-itens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    margin-top: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.projeto__contribuicao-itens li + li::before {
+    content: "/";
+    margin-right: 0.6rem;
+    color: var(--c-texto-fraco);
+    font-weight: 400;
+}
+
+.projeto__rodape {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-linha);
+}
+
+.projeto__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+}
+
+
+/* ---------- Tags de tecnologia ---------- */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.tags li {
+    padding: 0.3rem 0.65rem;
+    border: 1px solid var(--c-linha-forte);
+    border-radius: 2px;
+    font-family: var(--fonte-mono);
+    font-size: 0.8rem;
+    color: var(--c-texto);
+}
+
+
+/* ---------- Link externo ---------- */
+
+.link-externo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    border-bottom: 1px solid var(--c-linha-forte);
+    font-weight: 700;
+}
+
+.link-externo span {
+    color: var(--c-acento);
+    transition: transform 0.3s var(--curva);
+}
+
+.link-externo:hover {
+    color: var(--c-acento);
+    border-bottom-color: var(--c-acento);
+}
+
+.link-externo:hover span,
+.link-externo:focus-visible span {
+    transform: translate(0.15rem, -0.15rem);
+}
+
+
+/* ---------- Outros projetos ---------- */
+
+.outros {
+    margin-top: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.outros__cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.outros__lista {
+    border-top: 1px solid var(--c-linha-forte);
+}
+
+.outros__link {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 4fr) minmax(0, 6fr) 6rem 1.5rem;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+    padding-block: 1.1rem;
+    border-bottom: 1px solid var(--c-linha);
+}
+
+.outros__nome {
+    font-weight: 700;
+}
+
+.outros__descricao {
+    color: var(--c-texto-suave);
+    font-size: 0.95rem;
+}
+
+.outros__seta {
+    color: var(--c-acento);
+    text-align: right;
+    transition: transform 0.3s var(--curva);
+}
+
+.outros__link:hover .outros__nome {
+    color: var(--c-acento);
+}
+
+.outros__link:hover .outros__seta,
+.outros__link:focus-visible .outros__seta {
+    transform: translate(0.15rem, -0.15rem);
+}
+
+
+/* ---------- Habilidades: responsividade ---------- */
+
+@media (max-width: 900px) {
+    .stack__grupo {
+        grid-template-columns: 3rem minmax(0, 1fr);
+    }
+
+    .stack__itens {
+        grid-column: 1 / -1;
+    }
+
+    .projeto {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .outros__link {
+        grid-template-columns: 3rem minmax(0, 1fr) 1.5rem;
+    }
+
+    .outros__descricao,
+    .outros__tecnologias {
+        grid-column: 2 / 3;
+    }
+
+    .outros__seta {
+        grid-column: 3;
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .projeto__rodape {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .outros__link {
+        grid-template-columns: 2.25rem minmax(0, 1fr) 1.25rem;
+        gap: 0.35rem 0.75rem;
+    }
+}
+
 
 /* ---------- Rodapé ---------- */
 
