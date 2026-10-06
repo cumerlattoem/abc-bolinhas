@@ -126,8 +126,6 @@ Projeto desenvolvido pelos seguintes integrantes:
 | 9 | Emanuel Aguiar | [@emanuel304](https://github.com/emanuel304) |
 | 10 | Lucas Varela | [@lucasvarela1212](https://github.com/lucasvarela1212) |
 
-> **Observação:** substitua `usuario` pelo nome de usuário de cada integrante, tanto no texto exibido quanto no link.
-
 ---
 
 <div align="center">
